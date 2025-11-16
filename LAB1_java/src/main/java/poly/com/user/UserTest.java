@@ -41,27 +41,23 @@ public class UserTest {
             } else {
                  System.out.println("  > Không tìm thấy User nào thỏa mãn điều kiện.");
             }
-
             // -----------------------------------------------------
             // BÀI 4: TRUY VẤN PHÂN TRANG
             // -----------------------------------------------------
             // Yêu cầu: Trang thứ 3 (pageNo = 2), kích thước trang = 5
-            List<User> pageUsers = manager.findUsersByPage(2, 5); 
-            
+            List<User> pageUsers = manager.findUsersByPage(2, 5);            
             System.out.println("\n✅ Users được truy vấn tại TRANG 3 (tối đa 5 User):");
             if (!pageUsers.isEmpty()) {
                  pageUsers.forEach(System.out::println);
             } else {
                  System.out.println("  > Trang này không có dữ liệu (CSDL của bạn có ít hơn 15 bản ghi).");
             }
-
         } catch (Exception e) {
             System.err.println("Đã xảy ra lỗi trong quá trình thực thi: " + e.getMessage());
         } finally {
             // BƯỚC CUỐI CÙNG VÀ QUAN TRỌNG NHẤT: ĐÓNG TÀI NGUYÊN
             // 1. Đóng EntityManager của đối tượng hiện tại
-            manager.close();
-            
+            manager.close();           
             // 2. Đóng EntityManagerFactory của toàn bộ ứng dụng (KHẮC PHỤC LỖI)
             UserManager.shutdown(); 
         }
