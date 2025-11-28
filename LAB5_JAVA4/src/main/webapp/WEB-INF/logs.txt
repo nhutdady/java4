@@ -1,0 +1,3 @@
+2025-01-05T19:55:32 | /home | admin
+2025-01-05T19:56:01 | /product/list | admin
+2025-01-05T20:03:12 | /cart/view | user1
